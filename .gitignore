@@ -5,6 +5,7 @@ out/
 build/
 *.freezed.dart
 *.g.dart
+.dart_tool/
 
 ### Eclipse ###
 .apt_generated
