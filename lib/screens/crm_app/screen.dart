@@ -66,7 +66,7 @@ class CrmApp extends StatelessWidget {
                                     child: Column(
                                       children: [
                                         Row(
-                                          children: [crmText(snapshot.data!)],
+                                          children: [Expanded(child: crmText(snapshot.data!))],
                                         ),
                                         Row(
                                           children: [

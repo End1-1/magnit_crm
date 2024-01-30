@@ -10,30 +10,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4663d9a3-27fa-4e46-8626-5fa1b4631261" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/utils/translator.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/magnit_crm_android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/android/magnit_crm_android.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/crm_app/screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/crm_app/screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/crm_widgets/crm_big_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/crm_widgets/crm_big_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/crm_widgets/crm_checkbox.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/crm_widgets/crm_checkbox.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/crm_widgets/crm_text.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/crm_widgets/crm_text.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/crm_widgets/crm_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/crm_widgets/crm_text_field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/dashboard/screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/dashboard/screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/login/screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/login/screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/preorder/model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/preorder/model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/preorder/screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/preorder/screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/screens/preorder_list/screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/preorder_list/screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/screens/select_dialog/screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/select_dialog/screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/http_query.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/http_query.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/utils/prefs.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/prefs.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/magnit_crm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/magnit_crm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +71,8 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/projects/Cafe5ShopMobileClient",
-    "project.structure.last.edited": "Project",
+    "last_opened_file_path": "C:/projects/magnit_crm",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "dart.settings",
@@ -107,5 +102,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="FlutterRunConfigurationType">
+        <watch expression="phoneMaskFormatter.getMaskedText()" />
+        <watch expression="phoneMaskFormatter.unmaskText(preorder!.f_guestphone)" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

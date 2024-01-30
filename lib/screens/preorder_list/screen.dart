@@ -49,6 +49,7 @@ class PreorderListScreen extends CrmApp {
             }, 'assets/icons/back.svg'),
             crmHeaderText(model.tr('List of preorders')),
             Expanded(child: Container()),
+            IconButton(onPressed: (){}, icon: const Icon(Icons.search))
           ],
         ));
   }
@@ -56,16 +57,17 @@ class PreorderListScreen extends CrmApp {
   Widget _preorderRow(BuildContext context, Preorder p, int row) {
     return InkWell(onTap:(){
       model.openPreorder(p);
-    }, child: Row(
+    }, child: Container(decoration:
+        BoxDecoration(color: row % 2 == 0? Colors.white : Colors.black12) , child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         crmColumnText('$row', 30),
-        crmColumnText(prefs.dateString(p.f_datefor), 80),
-        crmColumnText(p.f_timefor, 60),
-        crmColumnText(p.f_tablename, 60),
+        crmColumnText(prefs.dateString(p.f_datefor), 90),
+        crmColumnText(p.f_timefor, 70),
+        crmColumnText(p.f_tablename, 80),
         crmColumnText(p.f_guestname, 200),
         crmColumnText(p.f_guestphone, 150)
       ],
-    ));
+    )));
   }
 }
