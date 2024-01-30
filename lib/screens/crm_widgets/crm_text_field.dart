@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:masked_text_field/masked_text_field.dart';
 
-crmPhoneField(TextEditingController controller, TextInputFormatter im, String label) {
+import 'crm_text.dart';
+
+crmPhoneField(TextEditingController controller, String label) {
   return Container(
       margin: const EdgeInsets.fromLTRB(2, 4, 2, 4),
-      child: TextFormField(
-        controller: controller,
-        inputFormatters: [
-          im
-        ],
-        decoration: InputDecoration(
-          hintText: '+374 (77) 01-91-07',
+      child: MaskedTextField(
+        mask: 'xx xx-xx-xx',
+        textFieldController: controller,
+        onChange: (v) {
+
+        },
+        inputDecoration: InputDecoration(
+            prefix: crmText('+374'),
             border: const OutlineInputBorder(),
             label: Text(label)),
       ));

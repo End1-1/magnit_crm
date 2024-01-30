@@ -1,20 +1,20 @@
-import 'package:flutter/cupertino.dart';
+import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:magnit_crm/screens/crm_app/model.dart';
 import 'package:magnit_crm/screens/preorder_list/data.dart';
 import 'package:magnit_crm/screens/select_dialog/model.dart';
 import 'package:magnit_crm/screens/select_dialog/screen.dart';
 import 'package:magnit_crm/utils/keys.dart';
-import 'package:intl/intl.dart';
 import 'package:magnit_crm/utils/prefs.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class PreorderScreenModel extends CrmModel {
   final tableController = TextEditingController();
   final dateController = TextEditingController();
   final timeController = TextEditingController();
   final phoneController = TextEditingController();
-  final phoneMaskFormatter = MaskTextInputFormatter(mask: "+374 (##) ##-##-##", type: MaskAutoCompletionType.eager);
+
+  //final phoneMaskFormatter = MaskTextInputFormatter(mask: "+374 (##) ##-##-##", type: MaskAutoCompletionType.eager);
   final guestController = TextEditingController();
   final guestCountController = TextEditingController();
   final amountController = TextEditingController();
@@ -30,7 +30,7 @@ class PreorderScreenModel extends CrmModel {
       tableController.text = preorder!.f_tablename;
       dateController.text = prefs.dateString(preorder!.f_datefor);
       timeController.text = preorder!.f_timefor;
-      phoneController.text = phoneMaskFormatter.unmaskText(preorder!.f_guestphone);
+      phoneController.text = preorder!.f_guestphone;
       guestController.text = preorder!.f_guestname;
       guestCountController.text = '${preorder!.f_guests}';
       amountController.text = '${preorder!.f_prepaidcash}';
@@ -96,9 +96,9 @@ class PreorderScreenModel extends CrmModel {
     if (phoneController.text.isEmpty) {
       err += '${tr('Enter the phone number')}\r\n';
     }
-    if (phoneMaskFormatter.getMaskedText().length < 12) {
-      err += '${tr('Phone number format is invalid')}\r\n';
-    }
+    // if (phoneMaskFormatter.masked.length < 12) {
+    //   err += '${tr('Phone number format is invalid')}\r\n';
+    // }
     if (guestController.text.isEmpty) {
       err += '${tr('Enter the guest name')}\r\n';
     }
@@ -119,6 +119,7 @@ class PreorderScreenModel extends CrmModel {
             'f_id': preorder?.f_id,
             'f_table': tableId,
             'f_staff': prefs.getInt(pkUserId),
+            'state_id': 5,
             'date': DateFormat('yyyy-MM-dd').format(DateFormat('dd/MM/yyyy').parse(dateController.text)),
             'time': timeController.text,
             'phone': phoneController.text,

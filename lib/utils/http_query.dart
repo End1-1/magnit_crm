@@ -16,7 +16,7 @@ class HttpQuery {
       var response = await http
           .post(
               Uri.https(
-                  '${prefs.getString('serveraddress')}',
+                  '${prefs.getString('serveraddress')}:443 ',
                   '/remotedb'),
               headers: {
                 'Content-Type': 'application/json',

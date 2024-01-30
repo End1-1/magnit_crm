@@ -17,12 +17,12 @@ class DashboardScreen extends CrmApp {
   @override
   List<Widget> body(BuildContext context) {
     return [
-      crmBigButton(() {
+      Row(children:[crmBigButton(() {
         model.navigate(PreorderScreen(model: PreorderScreenModel()));
-      }, 'assets/icons/preorder.svg', model.tr('Create preorder')),
-      crmBigButton(() {
+      }, 'assets/icons/preorder.svg', model.tr('Create preorder'))]),
+      Row(children:[crmBigButton(() {
         model.navigate(PreorderListScreen(model: PreorderListScreenModel()));
-      }, 'assets/icons/preorder.svg', model.tr('List of preorders'))
+      }, 'assets/icons/preorder.svg', model.tr('List of preorders'))])
     ];
   }
 

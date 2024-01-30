@@ -14,6 +14,7 @@ class PreorderScreen extends CrmApp {
   @override
   List<Widget> body(BuildContext context) {
     return [
+      Expanded(child: SingleChildScrollView(child: Column(children:[
       Row(children: [
         Expanded(child: crmTextField(model.tableController, model.tr('Table'))),
         crmImageButton(model.selectTable, 'assets/icons/edit.svg')
@@ -28,13 +29,13 @@ class PreorderScreen extends CrmApp {
           crmImageButton(model.selectTime, 'assets/icons/edit.svg')
         ],
       ),
-      crmPhoneField(model.phoneController, model.phoneMaskFormatter, model.tr('Phone number')),
+      crmPhoneField(model.phoneController, model.tr('Phone number')),
       crmTextField(model.guestController, model.tr('Guest name')),
       crmTextField(model.emailController, model.tr('Email')),
       crmNumberTextField(model.guestCountController, model.tr('Count of guests')),
       crmNumberTextField(model.amountController, model.tr('Prepaid amount')),
       crmTextField(model.commentController, model.tr('Comment')),
-      crmTextField(model.feedbackController, model.tr('Feedback')),
+      crmTextField(model.feedbackController, model.tr('Feedback'))]))),
     ];
   }
 

@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:http/http.dart' as http;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:http/http.dart' as http;
 import 'package:magnit_crm/screens/login/model.dart';
 import 'package:magnit_crm/screens/login/screen.dart';
 import 'package:magnit_crm/utils/http_overrides.dart';
@@ -63,7 +64,8 @@ class _App extends State<App> {
           await http.get(Uri.https('magnitsoft.com', '/crm/crm.json'));
       if (result.statusCode < 299) {
         Map<String, dynamic> json = jsonDecode(result.body);
-        prefs.setString('serveraddress', json['server']);
+        //prefs.setString('serveraddress', json['server']);
+        prefs.setString('serveraddress', 'cview.operasuitehotel.com');
       }
     } catch (e) {
       print(e);

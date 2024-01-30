@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 Widget crmText(String text) {
-  return Text(text, style: const TextStyle());
+  return Text(text, style: const TextStyle(color: Colors.black));
 }
 
 Widget crmColumnText(String text, double width) {

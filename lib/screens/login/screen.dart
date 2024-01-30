@@ -19,8 +19,8 @@ class LoginScreen extends CrmApp {
       model.login();
     }
     return [
-      crmTextField(model.loginController, model.tr('Username')),
-      crmPasswordField(model.passwordController, model.tr('Password')),
+      Row(children:[Expanded(child: crmTextField(model.loginController, model.tr('Username')))]),
+    Row(children:[Expanded(child: crmPasswordField(model.passwordController, model.tr('Password')))]),
       StreamBuilder(
           stream: model.httpController.stream,
           builder: (builder, snapshot) {

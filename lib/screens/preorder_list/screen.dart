@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:magnit_crm/screens/crm_app/screen.dart';
 import 'package:magnit_crm/screens/crm_widgets/crm_image_button.dart';
 import 'package:magnit_crm/screens/crm_widgets/crm_text.dart';
-import 'package:magnit_crm/screens/preorder/model.dart';
-import 'package:magnit_crm/screens/preorder/screen.dart';
 import 'package:magnit_crm/utils/prefs.dart';
 
 import 'data.dart';
@@ -25,10 +22,9 @@ class PreorderListScreen extends CrmApp {
               return Container();
             }
             int row = 1;
-            return SingleChildScrollView(
+            return Expanded(child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: SingleChildScrollView(
-                    child: Column(
+                child: SingleChildScrollView(child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     for (final e in snapshot.data) ...[
@@ -36,7 +32,7 @@ class PreorderListScreen extends CrmApp {
                       const SizedBox(height: 10),
                     ]
                   ],
-                )));
+                ))));
           })
     ];
   }

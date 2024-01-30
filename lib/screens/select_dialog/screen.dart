@@ -25,7 +25,7 @@ class SelectDialogScreen extends CrmApp {
         if (snapshot.hasData == false) {
           return Container();
         }
-        return SingleChildScrollView(child: Column(
+        return Expanded(child: SingleChildScrollView(child: Column(
           children: [
             for(final m in snapshot.data!) ...[
             InkWell(onTap: (){
@@ -35,7 +35,7 @@ class SelectDialogScreen extends CrmApp {
                 Expanded(child: Text(m['f_name']))
               ]))
           ]],
-        ));
+        )));
       })
     ];
   }

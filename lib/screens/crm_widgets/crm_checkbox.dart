@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CrmCheckbox extends StatefulWidget {
   bool checked;
-  final Function(bool) check;
+  Function(bool) check;
 
   CrmCheckbox(this.checked, this.check, {super.key});
 
