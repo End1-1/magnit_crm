@@ -20,10 +20,11 @@ crmPhoneField(TextEditingController controller, String label) {
       ));
 }
 
-crmTextField(TextEditingController controller, String label) {
+crmTextField(TextEditingController controller, String label, {bool autofocus = false}) {
   return Container(
       margin: const EdgeInsets.fromLTRB(2, 4, 2, 4),
       child: TextFormField(
+        autofocus: autofocus,
         controller: controller,
         decoration: InputDecoration(
           border: const OutlineInputBorder(),

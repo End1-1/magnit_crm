@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:magnit_crm/screens/crm_app/model.dart';
 import 'package:magnit_crm/screens/preorder/model.dart';
 import 'package:magnit_crm/screens/preorder/screen.dart';
+import 'package:magnit_crm/screens/preorder_list/search_dialog.dart';
 
 import 'data.dart';
 
@@ -15,7 +16,8 @@ class PreorderListScreenModel extends CrmModel {
   }
 
   void openPreorder(Preorder p) {
-    navigate(PreorderScreen(model: PreorderScreenModel(preorder: p))).then((value) {
+    navigate(PreorderScreen(model: PreorderScreenModel(preorder: p)))
+        .then((value) {
       if (value != null) {
         if (value) {
           getList();
@@ -36,8 +38,19 @@ class PreorderListScreenModel extends CrmModel {
     super.httpQuery({
       'call': 'sf_list_of',
       'format': 3,
-      'params':
-        {'list': 'preorders'}
+      'params': {'list': 'preorders'}
+    });
+  }
+
+  void searchDialog() {
+    SearchDialog().getInput(this).then((value) {
+      if (value != null) {
+        super.httpQuery({
+          'call': 'sf_list_of',
+          'format': 3,
+          'params': {'list': 'preorders', 'searchtext': value}
+        });
+      }
     });
   }
 }

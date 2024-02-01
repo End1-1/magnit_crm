@@ -51,6 +51,7 @@ class PreorderScreen extends CrmApp {
             }, 'assets/icons/back.svg'),
             crmHeaderText(model.tr('Preorder info')),
             Expanded(child: Container()),
+            crmImageButton(model.delete, 'assets/icons/delete.svg'),
             crmImageButton(model.save, 'assets/icons/done.svg')
           ],
         ));

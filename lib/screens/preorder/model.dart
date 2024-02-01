@@ -133,4 +133,8 @@ class PreorderScreenModel extends CrmModel {
     };
     super.httpQuery(params, okFunction: okCreated);
   }
+
+  void delete() {
+
+  }
 }

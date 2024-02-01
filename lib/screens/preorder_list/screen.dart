@@ -49,7 +49,7 @@ class PreorderListScreen extends CrmApp {
             }, 'assets/icons/back.svg'),
             crmHeaderText(model.tr('List of preorders')),
             Expanded(child: Container()),
-            IconButton(onPressed: (){}, icon: const Icon(Icons.search))
+            IconButton(onPressed: model.searchDialog, icon: const Icon(Icons.search))
           ],
         ));
   }
