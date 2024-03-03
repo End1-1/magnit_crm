@@ -21,6 +21,9 @@ class Preorder with _$Preorder {
     required String f_guestphone,
     required String f_guestemail,
     required double f_prepaidcash,
+    required double f_prepaidcard,
+    required int f_state,
+    required String f_statename,
   }) = _Preorder;
 
   factory Preorder.fromJson(Map<String, dynamic> json) =>

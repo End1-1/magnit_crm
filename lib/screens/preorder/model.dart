@@ -1,7 +1,8 @@
-import 'package:extended_masked_text/extended_masked_text.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:magnit_crm/screens/crm_app/model.dart';
+import 'package:magnit_crm/screens/crm_widgets/cmr_text_button.dart';
+import 'package:magnit_crm/screens/crm_widgets/crm_text.dart';
 import 'package:magnit_crm/screens/preorder_list/data.dart';
 import 'package:magnit_crm/screens/select_dialog/model.dart';
 import 'package:magnit_crm/screens/select_dialog/screen.dart';
@@ -17,7 +18,8 @@ class PreorderScreenModel extends CrmModel {
   //final phoneMaskFormatter = MaskTextInputFormatter(mask: "+374 (##) ##-##-##", type: MaskAutoCompletionType.eager);
   final guestController = TextEditingController();
   final guestCountController = TextEditingController();
-  final amountController = TextEditingController();
+  final amountCashController = TextEditingController();
+  final amountCardController = TextEditingController();
   final emailController = TextEditingController();
   final commentController = TextEditingController();
   final feedbackController = TextEditingController();
@@ -33,7 +35,8 @@ class PreorderScreenModel extends CrmModel {
       phoneController.text = preorder!.f_guestphone;
       guestController.text = preorder!.f_guestname;
       guestCountController.text = '${preorder!.f_guests}';
-      amountController.text = '${preorder!.f_prepaidcash}';
+      amountCashController.text = '${preorder!.f_prepaidcash}';
+      amountCardController.text = '${preorder!.f_prepaidcard}';
       emailController.text = preorder!.f_guestemail;
       commentController.text = preorder!.f_comment;
       feedbackController.text = preorder!.f_feedback;
@@ -45,10 +48,10 @@ class PreorderScreenModel extends CrmModel {
             model: SelectDialogModel('free_preorder_table'),
             title: tr('Select table')))
         .then((value) {
-          if (value != null) {
-            tableId = value['f_id']!;
-            tableController.text = value['f_name']!;
-          }
+      if (value != null) {
+        tableId = value['f_id']!;
+        tableController.text = value['f_name']!;
+      }
     });
   }
 
@@ -56,7 +59,7 @@ class PreorderScreenModel extends CrmModel {
     showDatePicker(
             context: navigatorKey.currentContext!,
             initialDate: DateTime.now(),
-            firstDate: DateTime.now(),
+            firstDate: DateTime.now().add(const Duration(days: -270)),
             lastDate: DateTime.now().add(const Duration(days: 90)))
         .then((value) {
       if (value != null) {
@@ -75,11 +78,28 @@ class PreorderScreenModel extends CrmModel {
     });
   }
 
+  Future<void> findInfo() async {
+    httpQuery({
+      'call': 'sf_find_info',
+      'format': 3,
+      'params': {'phone': phoneController.text}
+    }, okFunction: okFindInfo);
+  }
+
   void okCreated(dynamic d) {
-      dialogOk = (){
-        Navigator.pop(navigatorKey.currentContext!, true);
-      };
-      dialogController.add(tr('Preorder created'));
+    dialogOk = () {
+      Navigator.pop(navigatorKey.currentContext!, true);
+    };
+    dialogController.add(tr('Preorder created'));
+  }
+
+  void okFindInfo(d) {
+    guestController.text = d['f_name'];
+    emailController.text = d['f_email'];
+  }
+
+  void okRemoved(d) {
+    Navigator.pop(navigatorKey.currentContext!, true);
   }
 
   void save() {
@@ -115,26 +135,61 @@ class PreorderScreenModel extends CrmModel {
     Map<String, dynamic> params = {
       'call': 'sp_create_preorder',
       'format': 1,
-          'params':{
-            'f_id': preorder?.f_id,
-            'f_table': tableId,
-            'f_staff': prefs.getInt(pkUserId),
-            'state_id': 5,
-            'date': DateFormat('yyyy-MM-dd').format(DateFormat('dd/MM/yyyy').parse(dateController.text)),
-            'time': timeController.text,
-            'phone': phoneController.text,
-            'guest': guestController.text,
-            'email': emailController.text,
-            'guests_count': int.tryParse(guestCountController.text) ?? 0,
-            'prepaid': double.tryParse(amountController.text) ?? 0,
-            'comments': commentController.text,
-            'feedback': feedbackController.text,
-          }
+      'params': {
+        'f_id': preorder?.f_id,
+        'f_table': tableId,
+        'f_staff': prefs.getInt(pkUserId),
+        'state_id': 5,
+        'date': DateFormat('yyyy-MM-dd')
+            .format(DateFormat('dd/MM/yyyy').parse(dateController.text)),
+        'time': timeController.text,
+        'phone': phoneController.text,
+        'guest': guestController.text,
+        'email': emailController.text,
+        'guests_count': int.tryParse(guestCountController.text) ?? 0,
+        'prepaid': double.tryParse(amountCashController.text) ?? 0,
+        'prepaidcard': double.tryParse(amountCardController.text) ?? 0,
+        'comments': commentController.text,
+        'feedback': feedbackController.text,
+      }
     };
     super.httpQuery(params, okFunction: okCreated);
   }
 
-  void delete() {
-
+  Future<void> delete() async {
+    if (preorder == null || preorder!.f_id.isEmpty) {
+      showDialog(
+          context: navigatorKey.currentContext!,
+          builder: (builder) {
+            return AlertDialog(content: crmText(tr('Preorder was not saved')));
+          });
+      return;
+    }
+    showDialog(
+        context: navigatorKey.currentContext!,
+        builder: (builder) {
+          return SimpleDialog(
+            contentPadding: const EdgeInsets.all(30),
+            children: [
+              crmText(tr('Confirm to remove')),
+              Row(children: [
+                crmTextButton(tr('Remove'), () {
+                  Navigator.pop(builder, true);
+                }),
+                crmTextButton(tr('Cancel'), () {
+                  Navigator.pop(builder);
+                })
+              ])
+            ],
+          );
+        }).then((value) {
+      if (value ?? false) {
+        super.httpQuery({
+          'call': 'sf_remove_preorder',
+          'format': 3,
+          'params': {'id': preorder?.f_id}
+        }, okFunction: okRemoved);
+      }
+    });
   }
 }

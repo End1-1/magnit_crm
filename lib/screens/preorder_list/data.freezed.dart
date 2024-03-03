@@ -34,6 +34,9 @@ mixin _$Preorder {
   String get f_guestphone => throw _privateConstructorUsedError;
   String get f_guestemail => throw _privateConstructorUsedError;
   double get f_prepaidcash => throw _privateConstructorUsedError;
+  double get f_prepaidcard => throw _privateConstructorUsedError;
+  int get f_state => throw _privateConstructorUsedError;
+  String get f_statename => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -60,7 +63,10 @@ abstract class $PreorderCopyWith<$Res> {
       String f_guesttaxname,
       String f_guestphone,
       String f_guestemail,
-      double f_prepaidcash});
+      double f_prepaidcash,
+      double f_prepaidcard,
+      int f_state,
+      String f_statename});
 }
 
 /// @nodoc
@@ -90,6 +96,9 @@ class _$PreorderCopyWithImpl<$Res, $Val extends Preorder>
     Object? f_guestphone = null,
     Object? f_guestemail = null,
     Object? f_prepaidcash = null,
+    Object? f_prepaidcard = null,
+    Object? f_state = null,
+    Object? f_statename = null,
   }) {
     return _then(_value.copyWith(
       f_id: null == f_id
@@ -148,6 +157,18 @@ class _$PreorderCopyWithImpl<$Res, $Val extends Preorder>
           ? _value.f_prepaidcash
           : f_prepaidcash // ignore: cast_nullable_to_non_nullable
               as double,
+      f_prepaidcard: null == f_prepaidcard
+          ? _value.f_prepaidcard
+          : f_prepaidcard // ignore: cast_nullable_to_non_nullable
+              as double,
+      f_state: null == f_state
+          ? _value.f_state
+          : f_state // ignore: cast_nullable_to_non_nullable
+              as int,
+      f_statename: null == f_statename
+          ? _value.f_statename
+          : f_statename // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -174,7 +195,10 @@ abstract class _$$PreorderImplCopyWith<$Res>
       String f_guesttaxname,
       String f_guestphone,
       String f_guestemail,
-      double f_prepaidcash});
+      double f_prepaidcash,
+      double f_prepaidcard,
+      int f_state,
+      String f_statename});
 }
 
 /// @nodoc
@@ -202,6 +226,9 @@ class __$$PreorderImplCopyWithImpl<$Res>
     Object? f_guestphone = null,
     Object? f_guestemail = null,
     Object? f_prepaidcash = null,
+    Object? f_prepaidcard = null,
+    Object? f_state = null,
+    Object? f_statename = null,
   }) {
     return _then(_$PreorderImpl(
       f_id: null == f_id
@@ -260,6 +287,18 @@ class __$$PreorderImplCopyWithImpl<$Res>
           ? _value.f_prepaidcash
           : f_prepaidcash // ignore: cast_nullable_to_non_nullable
               as double,
+      f_prepaidcard: null == f_prepaidcard
+          ? _value.f_prepaidcard
+          : f_prepaidcard // ignore: cast_nullable_to_non_nullable
+              as double,
+      f_state: null == f_state
+          ? _value.f_state
+          : f_state // ignore: cast_nullable_to_non_nullable
+              as int,
+      f_statename: null == f_statename
+          ? _value.f_statename
+          : f_statename // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -281,7 +320,10 @@ class _$PreorderImpl implements _Preorder {
       required this.f_guesttaxname,
       required this.f_guestphone,
       required this.f_guestemail,
-      required this.f_prepaidcash});
+      required this.f_prepaidcash,
+      required this.f_prepaidcard,
+      required this.f_state,
+      required this.f_statename});
 
   factory _$PreorderImpl.fromJson(Map<String, dynamic> json) =>
       _$$PreorderImplFromJson(json);
@@ -314,10 +356,16 @@ class _$PreorderImpl implements _Preorder {
   final String f_guestemail;
   @override
   final double f_prepaidcash;
+  @override
+  final double f_prepaidcard;
+  @override
+  final int f_state;
+  @override
+  final String f_statename;
 
   @override
   String toString() {
-    return 'Preorder(f_id: $f_id, f_table: $f_table, f_tablename: $f_tablename, f_datefor: $f_datefor, f_timefor: $f_timefor, f_guests: $f_guests, f_comment: $f_comment, f_feedback: $f_feedback, f_guest: $f_guest, f_guestname: $f_guestname, f_guesttaxname: $f_guesttaxname, f_guestphone: $f_guestphone, f_guestemail: $f_guestemail, f_prepaidcash: $f_prepaidcash)';
+    return 'Preorder(f_id: $f_id, f_table: $f_table, f_tablename: $f_tablename, f_datefor: $f_datefor, f_timefor: $f_timefor, f_guests: $f_guests, f_comment: $f_comment, f_feedback: $f_feedback, f_guest: $f_guest, f_guestname: $f_guestname, f_guesttaxname: $f_guesttaxname, f_guestphone: $f_guestphone, f_guestemail: $f_guestemail, f_prepaidcash: $f_prepaidcash, f_prepaidcard: $f_prepaidcard, f_state: $f_state, f_statename: $f_statename)';
   }
 
   @override
@@ -349,7 +397,12 @@ class _$PreorderImpl implements _Preorder {
             (identical(other.f_guestemail, f_guestemail) ||
                 other.f_guestemail == f_guestemail) &&
             (identical(other.f_prepaidcash, f_prepaidcash) ||
-                other.f_prepaidcash == f_prepaidcash));
+                other.f_prepaidcash == f_prepaidcash) &&
+            (identical(other.f_prepaidcard, f_prepaidcard) ||
+                other.f_prepaidcard == f_prepaidcard) &&
+            (identical(other.f_state, f_state) || other.f_state == f_state) &&
+            (identical(other.f_statename, f_statename) ||
+                other.f_statename == f_statename));
   }
 
   @JsonKey(ignore: true)
@@ -369,7 +422,10 @@ class _$PreorderImpl implements _Preorder {
       f_guesttaxname,
       f_guestphone,
       f_guestemail,
-      f_prepaidcash);
+      f_prepaidcash,
+      f_prepaidcard,
+      f_state,
+      f_statename);
 
   @JsonKey(ignore: true)
   @override
@@ -400,7 +456,10 @@ abstract class _Preorder implements Preorder {
       required final String f_guesttaxname,
       required final String f_guestphone,
       required final String f_guestemail,
-      required final double f_prepaidcash}) = _$PreorderImpl;
+      required final double f_prepaidcash,
+      required final double f_prepaidcard,
+      required final int f_state,
+      required final String f_statename}) = _$PreorderImpl;
 
   factory _Preorder.fromJson(Map<String, dynamic> json) =
       _$PreorderImpl.fromJson;
@@ -433,6 +492,12 @@ abstract class _Preorder implements Preorder {
   String get f_guestemail;
   @override
   double get f_prepaidcash;
+  @override
+  double get f_prepaidcard;
+  @override
+  int get f_state;
+  @override
+  String get f_statename;
   @override
   @JsonKey(ignore: true)
   _$$PreorderImplCopyWith<_$PreorderImpl> get copyWith =>

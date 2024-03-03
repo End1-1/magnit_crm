@@ -10,7 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4663d9a3-27fa-4e46-8626-5fa1b4631261" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/icons/search.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/preorder/model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/preorder/model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/preorder/screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/preorder/screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/preorder_list/data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/preorder_list/data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/preorder_list/data.freezed.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/preorder_list/data.freezed.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/preorder_list/data.g.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/preorder_list/data.g.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/preorder_list/screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/preorder_list/screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +45,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
   <component name="ProjectId" id="2Wybx0LoTCIAVlvemNqL4bBTsQl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,7 +68,7 @@
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projects/magnit_crm&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projects/magnit_crm/assets/icons&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -63,8 +78,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\magnit_crm" />
       <recent name="C:\projects\magnit_crm\assets\icons" />
+      <recent name="C:\projects\magnit_crm" />
       <recent name="C:\projects\magnit_crm\lib" />
     </key>
   </component>

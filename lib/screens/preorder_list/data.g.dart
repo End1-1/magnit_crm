@@ -22,6 +22,9 @@ _$PreorderImpl _$$PreorderImplFromJson(Map<String, dynamic> json) =>
       f_guestphone: json['f_guestphone'] as String,
       f_guestemail: json['f_guestemail'] as String,
       f_prepaidcash: (json['f_prepaidcash'] as num).toDouble(),
+      f_prepaidcard: (json['f_prepaidcard'] as num).toDouble(),
+      f_state: json['f_state'] as int,
+      f_statename: json['f_statename'] as String,
     );
 
 Map<String, dynamic> _$$PreorderImplToJson(_$PreorderImpl instance) =>
@@ -40,4 +43,7 @@ Map<String, dynamic> _$$PreorderImplToJson(_$PreorderImpl instance) =>
       'f_guestphone': instance.f_guestphone,
       'f_guestemail': instance.f_guestemail,
       'f_prepaidcash': instance.f_prepaidcash,
+      'f_prepaidcard': instance.f_prepaidcard,
+      'f_state': instance.f_state,
+      'f_statename': instance.f_statename,
     };

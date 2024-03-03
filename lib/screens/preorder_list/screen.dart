@@ -66,7 +66,10 @@ class PreorderListScreen extends CrmApp {
         crmColumnText(p.f_timefor, 70),
         crmColumnText(p.f_tablename, 80),
         crmColumnText(p.f_guestname, 200),
-        crmColumnText(p.f_guestphone, 150)
+        crmColumnText(p.f_guestphone, 150),
+        crmColumnText('${p.f_prepaidcash}', 100),
+        crmColumnText('${p.f_prepaidcard}', 100),
+        crmColumnText(p.f_statename, 100)
       ],
     )));
   }
